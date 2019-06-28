@@ -1,4 +1,4 @@
-package com.example.zhuozhanapplication;
+package com.example.zhuozhanapplication.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.zhuozhanapplication.R;
 import com.example.zhuozhanapplication.adapter.MyAdapter;
 import com.example.zhuozhanapplication.fragment.Fragment1;
 import com.example.zhuozhanapplication.fragment.Fragment2;

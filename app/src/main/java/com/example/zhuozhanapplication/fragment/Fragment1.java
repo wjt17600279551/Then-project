@@ -14,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.zhuozhanapplication.R;
-import com.example.zhuozhanapplication.TongZhiActivity;
-import com.example.zhuozhanapplication.adapter.MyAdapter;
+import com.example.zhuozhanapplication.activity.TongZhiActivity;
 import com.example.zhuozhanapplication.adapter.RenWuAdapter;
 import com.example.zhuozhanapplication.httpUtils.BaseUrlUtils;
 import com.example.zhuozhanapplication.httpUtils.MyService;
@@ -24,8 +23,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -69,20 +66,48 @@ public class Fragment1 extends Fragment {
         phone=view.findViewById(R.id.phone);
         zhiwei=view.findViewById(R.id.zhiwei);
         bumen=view.findViewById(R.id.bumen);
+        imageView=view.findViewById(R.id.message_btn);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), TongZhiActivity.class);
+                startActivity(intent);
+            }
+        });
         initNetData();
-        LinearLayoutManager manager=new LinearLayoutManager(getActivity());
-        manager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(manager);
-//        adapter=new MyAdapter();
+//        LinearLayoutManager manager=new LinearLayoutManager(getActivity());
+//        manager.setOrientation(LinearLayoutManager.VERTICAL);
+//        recyclerView.setLayoutManager(manager);
+//        adapter=new RenWuAdapter();
 //        recyclerView.setAdapter(adapter);
-
+//        initNetData1();
 
         return view;
     }
 
+    private void initNetData1() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        Request request = chain.request()
+                                .newBuilder()
+                                .addHeader("Authorization", token)
+                                .build();
+                        return chain.proceed(request);
+                    }
+                }).build();
+//        Retrofit retrofit=new Retrofit.Builder()
+//                .baseUrl(BaseUrlUtils.NET_BASE_URL)
+//                .client(client)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        MyService myService = retrofit.create(MyService.class);
+//        myService.getRenWu(token);
+    }
+
 
     private void initNetData(){
-
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new Interceptor() {
                     @Override

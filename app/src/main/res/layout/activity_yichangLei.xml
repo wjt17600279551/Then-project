@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TongZhiActivity"
+    tools:context=".activity.YiChangLeiActivity"
     android:background="#122131"
     android:orientation="vertical">
-
     <RelativeLayout
         android:layout_marginTop="@dimen/dp_20"
         android:layout_width="match_parent"
@@ -23,16 +22,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通告"
+            android:text="异常列表"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/sp_18"
             android:layout_marginTop="@dimen/dp_16"
-            android:layout_marginLeft="@dimen/dp_163"/>
+            android:layout_marginLeft="@dimen/dp_145"/>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rec_tz"></android.support.v7.widget.RecyclerView>
+        android:id="@+id/rec_yichanglei">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

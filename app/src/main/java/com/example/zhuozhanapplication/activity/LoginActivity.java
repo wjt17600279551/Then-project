@@ -1,4 +1,4 @@
-package com.example.zhuozhanapplication;
+package com.example.zhuozhanapplication.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.zhuozhanapplication.R;
 import com.example.zhuozhanapplication.httpUtils.BaseUrlUtils;
 import com.example.zhuozhanapplication.httpUtils.MyService;
 
