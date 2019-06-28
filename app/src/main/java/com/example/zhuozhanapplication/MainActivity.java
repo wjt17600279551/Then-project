@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
-
         Intent intent=getIntent();
         token = intent.getStringExtra("token");
 

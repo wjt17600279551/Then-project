@@ -29,7 +29,7 @@ public class Fragment4 extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_fragment4, container, false);
         imageView=view.findViewById(R.id.tou);
-        Glide.with(this).load(R.drawable.ic_aaa)
+        Glide.with(this).load(R.drawable.gerenzhongxin_icon_05)
                 .apply(RequestOptions.circleCropTransform()).into(imageView);
         return view;
     }

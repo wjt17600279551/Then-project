@@ -24,7 +24,6 @@
     </RelativeLayout>
     <ImageView
         android:id="@+id/tou"
-        android:src="@drawable/ic_aaa"
         android:layout_marginTop="@dimen/dp_30"
         android:layout_gravity="center_horizontal"
         android:layout_width="@dimen/dp_80"

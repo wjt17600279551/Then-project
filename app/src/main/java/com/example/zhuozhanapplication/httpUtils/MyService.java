@@ -1,7 +1,5 @@
 package com.example.zhuozhanapplication.httpUtils;
 
-import com.example.zhuozhanapplication.ChengGongBean;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,6 +14,6 @@ public interface MyService {
 
     //登陆成功人员的信息
     @GET("command/user/getUserInfoByToken")
-    Call<ChengGongBean> getCheng(@Query("Authorization")String Authorization);
+    Call<ResponseBody> getCheng(@Query("Authorization")String Authorization);
 
 }
