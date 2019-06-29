@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TongZhiActivity"
+    tools:context=".activity.CaoZuoActivity"
     android:background="#122131"
     android:orientation="vertical">
 
@@ -23,17 +23,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通告"
+            android:text="操作指南"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/sp_18"
             android:layout_marginTop="@dimen/dp_16"
-            android:layout_marginLeft="@dimen/dp_163"/>
+            android:layout_marginLeft="@dimen/dp_153"/>
     </RelativeLayout>
-
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rec_tz"></android.support.v7.widget.RecyclerView>
+        android:id="@+id/rec_zaozuo"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

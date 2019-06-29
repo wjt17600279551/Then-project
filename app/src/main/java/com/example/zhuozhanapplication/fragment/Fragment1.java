@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zhuozhanapplication.R;
 import com.example.zhuozhanapplication.activity.TongZhiActivity;
@@ -108,57 +109,60 @@ public class Fragment1 extends Fragment {
 
 
     private void initNetData(){
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request request = chain.request()
-                                .newBuilder()
-                                .addHeader("Authorization", token)
-                                .build();
-                        return chain.proceed(request);
-                    }
-                }).build();
-        Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(BaseUrlUtils.NET_BASE_URL)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        MyService service = retrofit.create(MyService.class);
-        Call<ResponseBody> cheng = service.getCheng(token);
-        cheng.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
-                try {
-                    String string = response.body().string();
-                    Log.e("aaa",""+string);
-                    JSONObject jsonObject=new JSONObject(string);
-                    JSONObject data = jsonObject.getJSONObject("data");
-                    String username = data.getString("username");
-                    String phone1 = data.getString("phone");
-                    String duty = data.getString("duty");
-                    String employer = data.getString("employer");
-                    name.setText("姓名："+username);
-                    if (phone1.equals("null")){
-                        phone.setText("手机号：无");
-                    }else {
-                        phone.setText("手机号："+phone1);
-                    }
+        if (token!=null){
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .addInterceptor(new Interceptor() {
+                        @Override
+                        public Response intercept(Chain chain) throws IOException {
+                            Request request = chain.request()
+                                    .newBuilder()
+                                    .addHeader("Authorization", token)
+                                    .build();
+                            return chain.proceed(request);
+                        }
+                    }).build();
+            Retrofit retrofit=new Retrofit.Builder()
+                    .baseUrl(BaseUrlUtils.NET_BASE_URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            MyService service = retrofit.create(MyService.class);
+            Call<ResponseBody> cheng = service.getCheng(token);
+            cheng.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+                    try {
+                        String string = response.body().string();
+                        Log.e("aaa",""+string);
+                        JSONObject jsonObject=new JSONObject(string);
+                        JSONObject data = jsonObject.getJSONObject("data");
+                        String username = data.getString("username");
+                        String phone1 = data.getString("phone");
+                        String duty = data.getString("duty");
+                        String employer = data.getString("employer");
+                        name.setText("姓名："+username);
+                        if (phone1.equals("null")){
+                            phone.setText("手机号：无");
+                        }else {
+                            phone.setText("手机号："+phone1);
+                        }
 
-                    zhiwei.setText("职位："+duty);
-                    bumen.setText("部门："+employer);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                        zhiwei.setText("职位："+duty);
+                        bumen.setText("部门："+employer);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }
+
     }
 
 }

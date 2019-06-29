@@ -18,4 +18,12 @@
         <item name="colorControlActivated">#FFFFFF</item>
     </style>
 
+    <style name="MyEdit" parent="Theme.AppCompat.Light">
+        <!--未被选中时下划线的颜色-->
+        <item name="colorControlNormal">#FFFFFF</item>
+        <!--文本的颜色-->
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+    </style>
+
 </resources>

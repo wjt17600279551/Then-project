@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CaoZuoXQActivity"
+    android:background="#122131"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="@drawable/nav_bg">
+        <ImageView
+            android:id="@+id/back_img"
+            android:layout_marginTop="@dimen/dp_17"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_15"
+            android:src="@drawable/icon_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A类设备操作指南"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_120"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_139"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_12" />
+
+    <ImageView
+        android:layout_marginLeft="@dimen/dp_29"
+        android:layout_width="302dp"
+        android:layout_height="202dp"
+        android:src="@drawable/tu" />
+
+    <TextView
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_139"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/sp_12"
+        android:layout_marginLeft="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_10"/>
+
+</LinearLayout>
